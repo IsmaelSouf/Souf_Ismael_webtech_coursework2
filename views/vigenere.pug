@@ -1,0 +1,32 @@
+extends layout.pug
+
+block head
+  title Vigenere Page
+
+block content   
+  section.para
+   h1  Vigenere Cipher
+   p
+    | The Vigen&egrave;re cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers, based on the letters of a keyword. It is a form of polyalphabetic substitution.
+    | The table consists of the alphabets written out 26 times in different rows, each alphabet shifted cyclically to the left compared to the previous alphabet, corresponding to the 26 possible Caesar Ciphers.
+  #input_area
+  div(align='center')
+    textarea#message(placeholder='Type your message' style='font:20px/1.25 normal freemono, calibri, monospace;width:90%;height:7em;')
+    br
+    label Key:
+    input#key(type='text' size='10' maxlength='15' maxwidth='')
+    p
+    .btn
+      div(style='text-align:center;')
+        button.button(type='submit' onclick='vigenere(false)') Encode
+        button.button(type='submit' onclick='vigenere(true)') Decode
+        button.button(type='submit' onclick='eraseText()') Clear
+      div
+        script(type='text/javascript' src='./javascript/vigenere.js')
+        .footer
+          p
+            | Ismael Souf 
+            br
+            |  Date: 19th April
+
+

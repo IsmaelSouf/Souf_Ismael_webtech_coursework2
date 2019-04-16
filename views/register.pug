@@ -1,0 +1,32 @@
+
+extends layout.pug
+
+block head
+  title Registration Page
+
+block content    
+  form.regform(action='/register', method='POST')
+    h1(align='left') REGISTRATION FORM
+    p
+      | FULL NAME: 
+      br
+      input.reginput(type='text', name='name', autofocus placeholder='Enter your full name...', reqired='')
+    p
+      | EMAIL ID: 
+      br
+      input.reginput(type='email',name='email', placeholder='Enter your Email address...')
+    p
+      | USERNAME: 
+      br
+      input.reginput(type='text',name='username', placeholder='Enter your username...')
+    p
+      | PASSWORD: 
+      br
+      input.reginput(type='password',name='password', placeholder='Enter your password...')
+      br
+      button.regsubmitbtn(type='submit') Register
+      .footer
+          p
+            | Ismael Souf 
+            br
+            |  Date: 19th April

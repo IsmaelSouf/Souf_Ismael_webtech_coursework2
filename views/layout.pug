@@ -1,0 +1,39 @@
+
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', type='text/css', href='./css/style.css')
+    block head
+    title My Website
+    
+  body
+    nav
+      ul
+        li
+          a(href='index') Home
+        li
+          a(href='base64') Base64
+        li
+          a(href='morse') Morse
+        li
+          a(href='vigenere') Vigenere
+        if user 
+          li.right
+            a(href='logout') Logout
+          li.right
+            a(href='inbox') Inbox
+          li.right
+            a(href='messenger') AloKet
+          li.right
+            a(href='profile') Profile
+        else
+          li.right
+            a(href='login') Login
+          li.right
+            a(href='register') Register
+
+
+    block content
+      
