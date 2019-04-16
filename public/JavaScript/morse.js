@@ -5,7 +5,7 @@ function encode()
 {
     
 //Lowercase only, ignore unknown characters.
-var plain_text = document.getElementById("message").value.toLowerCase().replace(/[^a-z]/g, "");
+var plain_text = document.getElementById("message").value.toLowerCase();
     
 var alphabet = 
 {  
@@ -34,14 +34,17 @@ var alphabet =
 var morse_text = [];
 
 // Transform the string object into an array and replace with morse word
-plain_text.split(" ").map(function (word) 
+plain_text.split("  ").map(function (word) 
 {
     // Replace each character with a morse "letter"
     word.split("").map(function (letter) 
     {
         morse_text.push(alphabet[letter]);
     });
-    morse_text.push("/ ");
+    if(plain_text.toLowerCase == " ")
+    {
+    morse_text.push("/");
+    }
 });
     
 // Convert the array back to string.

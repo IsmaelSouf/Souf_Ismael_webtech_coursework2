@@ -1,15 +1,24 @@
-extends layout
+extends layout.pug
 
-block content
-  .main.container
-    .row
-      .col-md-6.col-md-offset-3
-        h1.display-4.m-b-2 Log In
-        form(method='POST' action='/login')
-          div.form-group
-            label(for='email') Email
-            input.form-control(type='text' id='email' placeholder='email' name='email')
-          div.form-group
-            label(for='password') Password
-            input.form-control(type='password' id='password' placeholder='password' name='password')
-          button.btn.btn-primary(type='submit') Log in        
+block head
+  title Login Page
+
+block content    
+  form.regform(action='/login', method='POST')
+    h1(align='left') LOGIN
+    p
+      | USERNAME: 
+      br
+      input.reginput(type='text',name='luname', placeholder='Enter your username...')
+    p
+      | PASSWORD: 
+      br
+      input.reginput(type='password',name='lpword', placeholder='Enter your password...')
+      br
+      button.regsubmitbtn(type='submit') Login
+    br
+    .footer
+          p
+            | Ismael Souf 
+            br
+            |  Date: 19th April

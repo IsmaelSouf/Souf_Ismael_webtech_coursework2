@@ -1,0 +1,230 @@
+body {
+    background-image: url(".\./img/test.jpg");
+    background-color: black;
+    background-size: cover;
+    font-family: Calibri;
+    color: whitesmoke;
+    margin: 0;
+    padding-bottom:150px;
+}
+
+h1 { /* Styles the h1 */
+	color: whitesmoke;
+	font-size: 42px;
+    text-align: center; 
+    margin: 0;
+}
+h2 { /* Styles the h2 */
+	color: whitesmoke;
+	font-size: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+h3 { /* Styles the h3 */
+	color: whitesmoke;
+	font-size: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+h5
+{
+    color:indianred;
+    text-align:center;
+}
+
+textarea{ /* Styles the textbox */
+	border:1px solid beige;
+	width: 40%; 
+	margin-left :auto;
+    margin-right: auto;
+	max-width: 500px;
+	padding: 12px 20px;
+    border-radius: 4px;
+}
+
+
+/*Style for all the pargraph tag*/
+p { /* Style the paragraph */
+	max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+div { /* Styles the div */
+    display: block;
+}
+
+/*Style for Navbar*/
+ul {
+ list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: darkgrey;
+}
+
+li {
+  float: left;
+  border-right: 1px black;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 26px 28px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: gainsboro;
+}
+
+.center { /* Makes items go center */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.right {
+  float: right;
+}
+
+.right1 {
+  float: right;
+  margin-top: 20px;
+  margin-right: 10px;
+  color: Black;
+  font-size: 20px;
+}
+
+/* Set a style for all buttons */
+.btn .button { /* Styles the button */
+    background-color: #ddd;
+    border: none;
+    padding: 7px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn .button:hover { /* Styles the button when hovered */
+    background-color: gainsboro;
+    color: white;
+}
+
+
+/*Style for Cipher pages text and image section*/
+.para{
+  width: 100%;
+  text-align: center;
+}
+
+.regform{
+  padding-top: 30px;
+  margin: 0 auto;
+  width: 70%;
+  font-family: Calibri;
+  font-size: 11pt;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  border-collapse: collapse;
+  border: none;
+}
+
+.reginput {
+  margin-top: 10px;
+  width: 70%;
+  height: 30px;
+}
+
+.regsubmitbtn {
+  float: center;
+  margin-top: 30px;
+  width: 20%;
+  padding: 10px 18px;
+}
+
+.footer {
+	position:fixed;
+	left: 0px; 
+	bottom: 0px;
+	width: 100%; 
+    background-color: darkgrey;
+	padding: 0px 0%;
+    text-align: center;
+	color: black;
+}
+
+/* Contact Form Style */
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.select1 {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.select2 {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.select3 {
+  width: 70%;
+  padding: 12px;
+  border: 5px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  height: 50px;
+}
+
+.textarea2 {
+  width: 70%;
+  height: 140px;
+}
+
+.btncontact {
+  float: center;
+  background-color: darkgrey;
+  margin-top: 20px;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.btncontact:hover {
+  background-color: gainsboro;
+}
+
+.textarea3 {
+  width: 80%;
+  height: 10px;
+}
+
+.acctext {
+  margin-top: 10px;
+  width: 25%;
+  height: 10px;
+}
+

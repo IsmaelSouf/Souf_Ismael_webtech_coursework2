@@ -1,0 +1,30 @@
+{
+  "name": "webtech",
+  "version": "1.0.0",
+  "description": "Coursework-2",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Ismael Souf",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.5",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "my-dependency": "^1.0.1",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsmaelSouf/Souf_Ismael_webtech_coursework2.git"
+  },
+  "keywords": [
+    "coursework"
+  ],
+  "bugs": {
+    "url": "https://github.com/IsmaelSouf/Souf_Ismael_webtech_coursework2/issues"
+  },
+  "homepage": "https://github.com/IsmaelSouf/Souf_Ismael_webtech_coursework2#readme"
+}
