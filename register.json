@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Test1",
+    "email": "fullyp@live.fr",
+    "username": "Test1",
+    "password": "$2b$10$GgxXmWmM36pBoNO5Z1aMaOXMuw1yadKA8IkuV/gFgdU5q1GO0nXTC"
+  },
+  {
+    "name": "Test2",
+    "email": "natsu.eichiro@gmail.com",
+    "username": "Test2",
+    "password": "$2b$10$Q0JAQ9wZwxotCX8BLB/Mp.0ZssOF5od/HY3r0CXpXS4v6sqbrNMh6"
+  },
+  {
+    "name": "Test3",
+    "email": "fyora@outlook.fr",
+    "username": "Test3",
+    "password": "$2b$10$5RJpbfWe0u1eL3bV9XwkBOVEmjWDYBfCkq6/KPNLSLips81OSSbw."
+  },
+  {
+    "name": "Test4",
+    "email": "fyora@live.fr",
+    "username": "Test4",
+    "password": "$2b$10$3f0v197d9zrre5W0oXhDXOh1iISZJCaBhjLWcVFP/bJV7QCLygz8K"
+  },
+  {
+    "name": "Test5",
+    "email": "fullyp@outlook.fr",
+    "username": "Test5",
+    "password": "$2b$10$6K6FXGWV5m5FJd9Z042hku6yzOe.THoFm0xoNfnZ1vknKMDN.hEcq"
+  }
+]
