@@ -17,7 +17,7 @@ app.set('view engine', 'pug');
 //Allows to read the body inputs
 app.use(express.urlencoded({extended:true}));
 
-var isAuth = function(req, res, next) {
+var isAuthenticated = function(req, res, next) {
   user = req.cookies['username'];
   if (user) {
     return next();
@@ -65,9 +65,9 @@ app.get('/logout', function(req, res) {
   res.redirect('/login');
 });
 
-app.get('/messenger', isAuth, function(req, res) {
+app.get('/messenger', isAuthenticated, function(req, res) {
   var userarray = [];
-  fs.readFile('reg.json', function(err, data) {
+  fs.readFile('register.json', function(err, data) {
     var userdetails = JSON.parse(data);
     for (var i = 0; i < userdetails.length; i++) {
       var eachuser = userdetails[i].username;
@@ -77,11 +77,11 @@ app.get('/messenger', isAuth, function(req, res) {
   })
 });
 
-app.get('/profile', isAuth, function(req, res) {
+app.get('/profile', isAuthenticated, function(req, res) {
   if (user == 'admin'){
     res.render('admin');
   } else {
-    fs.readFile('reg.json', function(err, data) {
+    fs.readFile('register.json', function(err, data) {
       var userdetails = JSON.parse(data);
       for (var i=0; i<userdetails.length; i++){
         if (userdetails[i].username == user) {
@@ -95,9 +95,9 @@ app.get('/profile', isAuth, function(req, res) {
   }
 });
 
-app.get('/inbox', isAuth, function(req, res) {
+app.get('/inbox', isAuthenticated, function(req, res) {
   var msgarray = [];
-  fs.readFile('message.json', function(err, data) {
+  fs.readFile('messages.json', function(err, data) {
     msglist = JSON.parse(data);
     for (var i = 0; i < msglist.length; i++) {
       if (msglist[i].receiver == user){
@@ -115,7 +115,7 @@ app.get('/inbox', isAuth, function(req, res) {
 app.post('/register', function(req, res){
   //username = get.
   var userlist = [];
-  fs.readFile('reg.json', function(err, data) {
+  fs.readFile('register.json', function(err, data) {
     if (data == 0) {
       var name = req.body.name;
       var email = req.body.email;
@@ -127,7 +127,7 @@ app.post('/register', function(req, res){
       })
       userlist = [{name:name,email:email,username:username,password:password}];
       userlist.push(obj);
-      fs.writeFileSync('reg.json', JSON.stringify(userlist, null, 2), finished);
+      fs.writeFileSync('register.json', JSON.stringify(userlist, null, 2), finished);
       function finished(err) {
         console.log('Successfully added');
       }
@@ -143,7 +143,7 @@ app.post('/register', function(req, res){
       })
       var obj = {name:name,email:email,username:username,password:password};
       userlist.push(obj);
-      fs.writeFile('reg.json', JSON.stringify(userlist, null, 2), finished);
+      fs.writeFile('register.json', JSON.stringify(userlist, null, 2), finished);
       function finished(err) {
         console.log('Successfully added');
       }
@@ -155,7 +155,7 @@ app.post('/register', function(req, res){
 //User login and creates cookies
 app.post('/login', function(req, res) {
 
-  fs.readFile('reg.json', function(err, data) {
+  fs.readFile('register.json', function(err, data) {
     var user = JSON.parse(data);
     var luname = req.body.luname;
     var lpword = req.body.lpword;
@@ -181,14 +181,14 @@ app.post('/login', function(req, res) {
 //Creates json object with users message
 app.post('/messenger', function(req, res) {
   var msglist = [];
-  fs.readFile('message.json', function(err, data) {
+  fs.readFile('messages.json', function(err, data) {
     if (data == 0) {
       var sender = req.cookies['username'];
       var receiver = req.body.receiver;
       var message = req.body.msg;
 
       msglist = [{sender:sender,receiver:receiver,message:message}];
-      fs.writeFile('message.json', JSON.stringify(msglist, null, 2), finished);
+      fs.writeFile('messages.json', JSON.stringify(msglist, null, 2), finished);
       function finished(err) {
         console.log('Successfully added');
       }
@@ -200,7 +200,7 @@ app.post('/messenger', function(req, res) {
 
       var obj = {sender:sender,receiver:receiver,message:message};
       msglist.push(obj);
-      fs.writeFile('message.json', JSON.stringify(msglist, null, 2), finished);
+      fs.writeFile('messages.json', JSON.stringify(msglist, null, 2), finished);
       function finished(err) {
         console.log('Successfully added');
       }
@@ -212,7 +212,7 @@ app.post('/messenger', function(req, res) {
 //POST request to UPDATE
 app.post('/profile', function(req, res) {
   var user = req.cookies['username'];
-  fs.readFile('reg.json', function(err, data) {
+  fs.readFile('register.json', function(err, data) {
     var userdetails = JSON.parse(data);
     var name = req.body.name;
     var email = req.body.email;
@@ -226,7 +226,7 @@ app.post('/profile', function(req, res) {
         userdetails[i].name = name;
         userdetails[i].email = email;
         userdetails[i].password = password;
-        fs.writeFile('reg.json', JSON.stringify(userdetails, null, 2), finished);
+        fs.writeFile('register.json', JSON.stringify(userdetails, null, 2), finished);
         function finished(err) {
           console.log('Successfully added');
         }
