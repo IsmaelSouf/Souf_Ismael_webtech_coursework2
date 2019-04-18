@@ -2,29 +2,29 @@
 extends layout.pug
 
 block head
-  title Registration Page
+  title Registration 
 
 block content    
-  form.regform(action='/register', method='POST')
+  form.form1(action='/register', method='POST')
     h1(align='left') REGISTRATION FORM
     p
       | FULL NAME: 
       br
-      input.reginput(type='text', name='name', autofocus placeholder='Enter your full name...', reqired='')
+      input.form2(type='text', name='name', autofocus placeholder='Enter your full name...', reqired='')
     p
       | EMAIL ID: 
       br
-      input.reginput(type='email',name='email', placeholder='Enter your Email address...')
+      input.form2(type='email',name='email', placeholder='Enter your Email address...')
     p
       | USERNAME: 
       br
-      input.reginput(type='text',name='username', placeholder='Enter your username...')
+      input.form2(type='text',name='username', placeholder='Enter your username...(case sensitive)')
     p
       | PASSWORD: 
       br
-      input.reginput(type='password',name='password', placeholder='Enter your password...')
+      input.form2(type='password',name='password', placeholder='Enter your password...')
       br
-      button.regsubmitbtn(type='submit') Register
+      button.form3(type='submit') Register
       .footer
           p
             | Ismael Souf 

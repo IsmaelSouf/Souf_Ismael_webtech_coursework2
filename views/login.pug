@@ -1,22 +1,22 @@
 extends layout.pug
 
 block head
-  title Login Page
+  title Login
 
 block content    
-  form.regform(action='/login', method='POST')
+  form.form1(action='/login', method='POST')
     h1(align='left') LOGIN
     p
       | USERNAME: 
       br
-      input.reginput(type='text',name='luname', placeholder='Enter your username...')
+      input.form2(type='text',name='uname', placeholder='Enter your username...(case sensitive)')
     p
       | PASSWORD: 
       br
-      input.reginput(type='password',name='lpword', placeholder='Enter your password...')
+      input.form2(type='password',name='upass', placeholder='Enter your password...')
       br
-      button.regsubmitbtn(type='submit') Login
-    br
+      button.form3(type='submit') Login
+    img.img1(src='./img/messages.jpg')
     .footer
           p
             | Ismael Souf 

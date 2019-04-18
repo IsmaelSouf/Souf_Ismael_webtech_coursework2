@@ -23,5 +23,15 @@
     "sender": "Test5",
     "receiver": "Test1",
     "message": ".. / .-. . -.-. . .. ...- . -.. / .. - /"
+  },
+  {
+    "sender": "vanidha",
+    "receiver": "vanidha",
+    "message": "Aideh"
+  },
+  {
+    "sender": "Student1",
+    "receiver": "Student1",
+    "message": "SXNtYWVsIFNvdWY="
   }
 ]

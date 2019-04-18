@@ -14,7 +14,7 @@ function decodeBase(element)
 {
 	var plain_text = document.getElementsByTagName("textarea")[0].value; 
     //Decode a base-64 encoded string
-	var base64_text = atob(plain_text); 
+    var base64_text = atob(plain_text); 
     //Get the element with the specified ID
 	document.getElementById("message").value = base64_text;
 }

@@ -1,27 +1,27 @@
 extends layout.pug
 
 block head
-  title User Account Page
+  title Profile
   
 block content
-  form.regform(action='/profile', method='POST')
-    h1(align='left') User Details
+  form.form1(action='/profile', method='POST')
+    h1(align='left') User Informations
     p
     img#profile(height='50' width='50' src='./img/avatar.png' alt='profile-image')
     p
       | EMAIL ID: 
       br
-      textarea.acctext(name='email')=email
+      textarea.profile(name='email')=email
     p
       | USERNAME: 
       br
-      textarea.acctext(name='username', readonly='')=username
+      textarea.profile(name='username', readonly='')=username
     p
       |NEW PASSWORD: 
       br
-      textarea.acctext(name='password', placeholder='Enter new password...')
+      textarea.profile(name='password', placeholder='Enter new password...')
       br
-      button.btncontact(type='submit') Change Password
+      button.btntest(type='submit') Change Password
       .footer
         p
           | Ismael Souf 

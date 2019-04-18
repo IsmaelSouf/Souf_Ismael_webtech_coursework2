@@ -4,17 +4,17 @@ const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 
-//Init app
+//Initialization app
 const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cookieParser());
-//Load view Engine
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-//Allows to read the body inputs
+
 app.use(express.urlencoded({extended:true}));
 
 var isAuthenticated = function(req, res, next) {
@@ -65,6 +65,20 @@ app.get('/logout', function(req, res) {
   res.redirect('/login');
 });
 
+app.get('/profile', isAuthenticated, function(req, res) {
+    fs.readFile('register.json', function(err, data) {
+      var userdetails = JSON.parse(data);
+      for (var i=0; i<userdetails.length; i++){
+        if (userdetails[i].username == user) {
+          var name = userdetails[i].name;
+          var email = userdetails[i].email;
+          var username = userdetails[i].username;
+        }
+      }
+      res.render('profile', {name:name, email:email, username:username});
+    })
+});
+
 app.get('/messenger', isAuthenticated, function(req, res) {
   var userarray = [];
   fs.readFile('register.json', function(err, data) {
@@ -77,23 +91,6 @@ app.get('/messenger', isAuthenticated, function(req, res) {
   })
 });
 
-app.get('/profile', isAuthenticated, function(req, res) {
-  if (user == 'admin'){
-    res.render('admin');
-  } else {
-    fs.readFile('register.json', function(err, data) {
-      var userdetails = JSON.parse(data);
-      for (var i=0; i<userdetails.length; i++){
-        if (userdetails[i].username == user) {
-          var name = userdetails[i].name;
-          var email = userdetails[i].email;
-          var username = userdetails[i].username;
-        }
-      }
-      res.render('profile', {name:name, email:email, username:username});
-    })
-  }
-});
 
 app.get('/inbox', isAuthenticated, function(req, res) {
   var msgarray = [];
@@ -111,7 +108,7 @@ app.get('/inbox', isAuthenticated, function(req, res) {
   })
 });
 
-//Post Requests to READ
+
 app.post('/register', function(req, res){
   //username = get.
   var userlist = [];
@@ -152,25 +149,25 @@ app.post('/register', function(req, res){
   });
 });
 
-//User login and creates cookies
+
 app.post('/login', function(req, res) {
 
   fs.readFile('register.json', function(err, data) {
     var user = JSON.parse(data);
-    var luname = req.body.luname;
-    var lpword = req.body.lpword;
-    var auth = false;
+    var uname = req.body.uname;
+    var upass = req.body.upass;
+    var authenticated = false;
     for (var i = 0; i < user.length; i++) {
 
-      if (user[i].username == luname) {
-        var match = bcrypt.compareSync(lpword, user[i].password);
+      if (user[i].username == uname) {
+        var match = bcrypt.compareSync(upass, user[i].password);
         if (match) {
-          res.cookie('username', luname, {expire: 360000 + Date.now()});
-          auth = true;
+          res.cookie('username', uname, {expire: 86400 + Date.now()});
+          authenticated = true;
         }
       }
     }
-    if (auth == true) {
+    if (authenticated == true) {
       res.redirect('/inbox');
     } else {
       res.redirect('/login');
@@ -209,7 +206,6 @@ app.post('/messenger', function(req, res) {
   res.redirect('/messenger');
 });
 
-//POST request to UPDATE
 app.post('/profile', function(req, res) {
   var user = req.cookies['username'];
   fs.readFile('register.json', function(err, data) {
@@ -237,8 +233,8 @@ app.post('/profile', function(req, res) {
   })
 });
 
-//Start Server
-var server = app.listen(5000, "127.0.0.1", function () {
+//Start Server 127.0.0.1 is the loopback Internet protocol (IP) address also referred to as the “localhost.” 
+var server = app.listen(3000, "127.0.0.1", function () {
   var host = server.address().address
   var port = server.address().port
 

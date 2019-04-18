@@ -1,13 +1,13 @@
 extends layout.pug
 
 block head
-  title Contact Page
+  title Messenger
   
 block content
   .container
     div(style='text-align:center')
       h2 AloKet Messenger
-      form.regform(action='/messenger', method='POST')
+      form.form1(action='/messenger', method='POST')
         select.select1(name='receiver')
           option Please select a user...
           each n in data
@@ -18,9 +18,9 @@ block content
         label Key(Applicable for Vigenere):
         input#key(type='text' size='10' maxlength='15' maxwidth='')
         p
-        button.btncontact(type='submit' onclick='encodeBase(this)') Send Base64
-        button.btncontact(type='submit' onclick='vigenere(false)') Send Vigenere
-        button.btncontact(type='submit' onclick='encode()') Send Morse
+        button.btntest(type='submit' onclick='encodeBase(this)') Send Base64
+        button.btntest(type='submit' onclick='vigenere(false)') Send Vigenere
+        button.btntest(type='submit' onclick='encode()') Send Morse
         script(type='text/javascript', src='./javascript/base64.js')
         script(type='text/javascript' src='./javascript/vigenere.js')
         script(type='text/javascript' src='./javascript/morse.js')

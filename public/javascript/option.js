@@ -1,6 +1,6 @@
 function testSelect()
 {
-    var yo = document.getElementById("inbox");
-    var displayInbox = yo.options[yo.selectedIndex].text;
+    var selectedText = document.getElementById("inbox");
+    var displayInbox = selectedText.options[selectedText.selectedIndex].text;
     document.getElementById("message").value=displayInbox;
 }

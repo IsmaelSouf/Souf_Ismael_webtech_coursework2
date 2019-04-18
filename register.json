@@ -28,5 +28,23 @@
     "email": "fullyp@outlook.fr",
     "username": "Test5",
     "password": "$2b$10$6K6FXGWV5m5FJd9Z042hku6yzOe.THoFm0xoNfnZ1vknKMDN.hEcq"
+  },
+  {
+    "name": "Ismael",
+    "email": "Ismael@mail.com",
+    "username": "ismael99",
+    "password": "$2b$10$oUeDapazihuI.DqZOsQRvOmGUsmjU0dV4t8onGbfFb4OvIEyEN1H6"
+  },
+  {
+    "name": "Vanidha",
+    "email": "vanidha@hotmail.com",
+    "username": "vanidha",
+    "password": "$2b$10$mK5MVFR8rxe4fD35deaOTueY6fo67BE3rXQ2ac/IzScOQ.zwM/vu2"
+  },
+  {
+    "name": "Student",
+    "email": "student@live.com",
+    "username": "Student1",
+    "password": "$2b$10$NutFdCFEEepNpMfWaBDcSOUNxBPrG3tIpE8UalE33vsfHt.yF1T3a"
   }
 ]

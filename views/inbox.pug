@@ -1,30 +1,33 @@
 extends layout.pug
 
 block head
-  title Inbox Page
+  title Inbox
   
 block content
   .container
     div(style='text-align:center')
       h2 All Inbox Messages
-      form.regform
+      form.form1
        select.select3(id='inbox' onchange="testSelect()")
         option Aloket Messages...
           each user, i in data
             option=user
-        textarea#message(readonly='', style='font:20px/1.25 normal freemono, calibri, monospace;width:70%;height:7em;')
+            
+        textarea#message(style='font:20px/1.25 normal freemono, calibri, monospace;width:70%;height:7em;')
+        br
+        |Please note that you need to select the encoded base64 to decrypt !
         br
         div(align='center')
         label Key(Applicable for Vigenere):
         input#key(type='text' size='10' maxlength='15' maxwidth='')
         p
-        button.btncontact(type='button' onclick='decodeBase(this)') Decode Base64
-        button.btncontact(type='button' onclick='vigenere(true)') Decode Vigenere
-        button.btncontact(type='button' onclick='decode()') Decode Morse
+        button.btntest(type='button' onclick='decodeBase(this)') Decode Base64
+        button.btntest(type='button' onclick='vigenere(true)') Decode Vigenere
+        button.btntest(type='button' onclick='decode()') Decode Morse
         script(type='text/javascript' src='./javascript/base64.js')
         script(type='text/javascript' src='./javascript/vigenere.js')
         script(type='text/javascript' src='./javascript/morse.js')    
-        script(type='text/javascript' src='./javascript/option.js') 
+        script(type='text/javascript' src='./javascript/option.js')  
         .footer
           p
             | Ismael Souf 
