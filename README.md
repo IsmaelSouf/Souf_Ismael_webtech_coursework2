@@ -5,8 +5,14 @@ The goal of this assignment is to extend your cypher site from the first coursew
 
 You must use HTML, CSS, & Javascript for the client interface. On the server side you may use Node.JS with the Express.js framework and SQLite. You may not use any additional libraries, templates, or frameworks (beyond those that are installed as standard with Node and Express).
 
+## Run Aloket App
 Clone the repository,
--npm install
+-npm install bcrypt
 -npm start
 
 Listening on http://127.0.0.1:3000.
+
+## ScreenShot
+
+![Image description](AloKet.png)
+
